@@ -30,7 +30,7 @@ int list_process_directories(void) {
     }
 
     //Close the directory using closedir()
-    // TESTING closedir(dir);
+    closedir(dir);
     //Check if closedir() failed
     if (closedir(dir) == -1) {
       perror("closedir");
@@ -205,7 +205,7 @@ int read_file_with_library(const char* filename) {
     fclose(file);
     //Check if fclose() failed
       if (file) {
-      perror("file close error");
+      fclose(file);
     }
 
     return 0; // Replace with proper error handling

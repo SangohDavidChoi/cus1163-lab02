@@ -205,7 +205,7 @@ int read_file_with_library(const char* filename) {
     fclose(file);
     //Check if fclose() failed
       if (file) {
-      perror("file close error");
+      fclose(file);
     }
 
     return 0; // Replace with proper error handling
